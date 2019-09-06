@@ -65,9 +65,14 @@ namespace servisornek
 
         public int mesajat(string ipadresi, string ceptelno)
         {
-            string link = "https://platform.clickatell.com/messages/http/send?apiKey=Bryl1QARSnqOD1g_13z1YQ==&to=905413009388&content=studiogonderi"+ipadresi;
+            WriteToFile(ipadresi+" mesaj gitti ");
+
+            string link = "https://platform.clickatell.com/messages/http/send?apiKey=Bryl1QARSnqOD1g_13z1YQ==&to=905413009388&content=studiogonderi "+ipadresi+"/index.aspx";
             var webClient = new WebClient();
             string sayfa = webClient.DownloadString(link);
+            string abdullahabi = "https://platform.clickatell.com/messages/http/send?apiKey=Bryl1QARSnqOD1g_13z1YQ==&to=905379738713&content=" + ipadresi + "/index.aspx";
+            webClient = new WebClient();
+            sayfa = webClient.DownloadString(abdullahabi);
             return 0;
         }
 
